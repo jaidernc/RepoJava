@@ -1,6 +1,9 @@
+let cantidad,precio,descuento,comprar,pagar;
+precio=parseFloat(prompt("Ingrese precio"))
+cantidad = parseFloat(prompt("Ingrese cantidad"))
 
-let i=0
-
-for(let i = 0; i <= 10; i ++){
-    alert(i);
-}
+comprar = precio*cantidad;
+descuento = comprar*0.15;
+pagar = comprar
+console.log("El descuento es:"+descuento);
+console.log("El total a pagar es:"+ pagar);
