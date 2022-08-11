@@ -1,24 +1,28 @@
-debugger
-
 let seguimos = true
-let operador = 3
+let descuento = 0.20
+let iva = 1.19
 while(seguimos){
-let nota1 = parseInt(prompt("Ingrese la primera nota."))
-let nota2 = parseInt(prompt("Ingrese la segunda nota."))
-let nota3 = parseInt(prompt("Ingrese la tercera nota."))
-let notaFinal = calcular(nota1,nota2,nota3)
+    let primerProducto = parseInt(prompt("Ingrese el primer producto"))
+    let segundoProducto = parseInt(prompt("Ingrese el segundo producto"))
+    let tercerProducto = parseInt(prompt("Ingrese el tercer Produto"))
+    let valorFinalIva = multiplicar(primerProducto,segundoProducto,tercerProducto,iva)
+    let valorFinalDescuento = restar(primerProducto,segundoProducto,tercerProducto,descuento)
+    
+        if(valorFinalIva >= 5000){
+            console.log("El precio del producto - el descuento es:", valorFinalDescuento)
+        }
+   
+        else if(valorFinalIva <= 5000){
+            console.log("El precio del producto + iva es:", valorFinalIva)
+        }
+        seguimos = confirm("¿Desea volver a ingresar nuevos precios?")
+}  
 
-if (calcular >= 10){
-    console.log("Felicidades, haz aprobado.",calcular)
+
+function multiplicar(pro1,pro2,pro3,iva){
+    return (pro1 + pro2 + pro3) * iva
 }
-else if (calcular < 7){
-    console.log("Lo sentimos, no haz logrado aprobar.",calcular)
+
+function restar(pro1,pro2,pro3,descuento){
+    return (pro1 + pro2 + pro3) * descuento
 }
-
-}
-
-function calcular(not1,not2,not3, ope){
-        return ((not1 + not2) + (not3)) / ope
-}
-
-
