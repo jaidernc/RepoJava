@@ -1,4 +1,23 @@
-let seguimos = true
+const ListaProductos = ['laptop' , 'celular' , 'teclados' , 'mouse' , 'monitores' , 'CPU' , 'Tarjetas Graficas'] 
+
+const selectProductos = document.querySelector("select")
+
+function arrayProductos(){
+    Producto .forEach (productos => {
+        ListaProductos.innerHTML += `<option value="">${productos}</option>`
+        
+    })
+}
+
+arrayProductos()
+
+const boton = document.querySelector("boton")
+
+boton.addEventListener("mouseenter", () =>{
+    console.log(1)
+})
+
+/*let seguimos = true
 let descuento = 0.20
 let iva = 1.19
 while(seguimos){
@@ -25,4 +44,4 @@ function multiplicar(pro1,pro2,pro3,iva){
 
 function restar(pro1,pro2,pro3,descuento){
     return (pro1 + pro2 + pro3) * descuento
-}
+}*/
