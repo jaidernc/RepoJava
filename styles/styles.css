@@ -1,0 +1,24 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+#Titulo {
+    display: flex;
+    justify-content: center;
+    /*align-items: center;*/
+    margin-top: 20px;
+}
+
+.Titulo_background{
+    background-color: yellow
+}
+
+#Tarjetas{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 20px;
+
+}
