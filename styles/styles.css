@@ -21,3 +21,8 @@
     justify-content: center;
 
 }
+
+.row{
+    display: flex;
+    padding: 20px;
+}

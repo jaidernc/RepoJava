@@ -29,7 +29,6 @@ function crearCards (){
 function funcionalidadbtn(){
     productos.forEach((prod) => {
         document.querySelector(`#btn-agregar${prod.id}`).addEventListener("click", ()=> {
-            console.log(prod)
             agregarAlCarrito(prod)
         })
     })
@@ -43,10 +42,8 @@ function agregarAlCarrito(prod){
     } else{
         prod.cantidad++
     }
-    console.log(carrito)
     reenderizaCarrito ()
 }
-
 
 function reenderizaCarrito (){
     carritoDiv.innerHTML = ""
@@ -83,6 +80,24 @@ function borrarProductos(){
         })
     })
 
+}
+
+function borrarProductos(){
+    carrito.forEach((prod) => {
+        document.querySelector(`#btn-borrar${prod.id}`)
+        .addEventListener("click", ()=> {
+            Swal.fire({
+                position: 'center',
+                icon: 'success',
+                title: 'se a eliminado el producto',
+                showConfirmButton: false,
+                timer: 1500
+              })
+              carrito =carrito.filter(
+                (productofilter) =>productofilter.id !== prod.id)
+                    reenderizaCarrito ()
+       })
+    })
 }
 crearCards ()
 reenderizaCarrito ()
