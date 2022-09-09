@@ -4,23 +4,27 @@ const carritoDiv = document.querySelector(".carrito")
 let carrito = JSON.parse(localStorage.getItem("carrito")) || []
 
 function crearCards (){
-    productos.forEach(prod=>{
-        containerDiv.innerHTML +=  `<div class="row">
-                                    <div class="col-sm-12 col-md-6 col-xl-4">
-                                     <div class="card" style="width: 18rem;">
-                                    <img src="./img/smartphone.jpg" class="card-img-top" alt="imagen de un smartphone">
-                                    <div class="card-body">
-                                    <h5 class="card-title">${prod.Nombre}</h5>
-                                    <p class="card-text">${prod.descripcion}</p>
-                                    <p class="card-text">${prod.precio}</p>
-                                    <p class="card-text">${prod.stock}</p>
-                                    <button class="btn btn-primary carrito" id= "btn-agregar${prod.id}">añadir al carrito</button>
-                                    </div>
-                                    </div>
-                                    </div>
-                                    </div>
-                                    </div>`   
-    })
+    fetch ('Javascript/datos.json')
+    .then( (Response) => Response.json())
+    .then ((productos) =>  {
+            productos.forEach(prod=>{
+                containerDiv.innerHTML +=  `<div class="row">
+                                            <div class="col-sm-12 col-md-6 col-xl-4">
+                                             <div class="card" style="width: 18rem;">
+                                            <img src="./img/smartphone.jpg" class="card-img-top" alt="imagen de un smartphone">
+                                            <div class="card-body">
+                                            <h5 class="card-title">${prod.Nombre}</h5>
+                                            <p class="card-text">${prod.descripcion}</p>
+                                            <p class="card-text">${prod.precio}</p>
+                                            <p class="card-text">${prod.stock}</p>
+                                            <button class="btn btn-primary carrito" id= "btn-agregar${prod.id}">añadir al carrito</button>
+                                            </div>
+                                            </div>
+                                            </div>
+                                            </div>
+                                            </div>`   
+            })
+        });
 
     funcionalidadbtn()
                         
